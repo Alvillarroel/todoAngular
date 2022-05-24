@@ -1,0 +1,13 @@
+<div *ngIf="services.length > 0 else elseBlock">
+  <p>Listing Tasks</p>
+  <ul *ngFor="let service of services">
+    <li>
+      <p>{{ service.name }}</p>
+      <small>{{ service.description }}</small>
+    </li>
+  </ul>
+</div>
+<ng-template #elseBlock>
+  <p>Hurray you don`t have any pending task!</p>
+  <a class="dark" routerLink="/add">Add Task</a>
+</ng-template>

@@ -1,0 +1,8 @@
+<nav class="menu">
+  <a [ngClass]="[menu-logo mode]" routerLink="/">LOGO</a>
+  <div class="menu-toogle">
+    <input class="menu-toogle__switch" type="checkbox" id="switch" [checked]="darkMode" (change)="toggleDarkMode()"/>
+    <label for="switch"></label>
+    <small>Dark mode</small>
+  </div>
+</nav>

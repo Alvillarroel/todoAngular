@@ -1,0 +1,7 @@
+@import './styles/index';
+
+
+.app-root.dark {
+  background-color: map-get($theme-colors, 'primary-dark');
+  color: #fff;
+}

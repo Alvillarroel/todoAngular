@@ -1,0 +1,10 @@
+@import '../../styles/index';
+
+.app-footer {
+  padding: 16px 0;
+  margin-top: 32px;
+  
+  &.dark { 
+    background: map-get($theme-colors, 'primary');
+  }
+}

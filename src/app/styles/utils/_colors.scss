@@ -1,0 +1,31 @@
+// 1. Colors
+// ==========================================================================
+$primary-color: #10627a;
+$primary-color-light: #148aae;
+$primary-color-dark: #0c4556;
+
+$secondary-color: #30e9a2;
+$success-color: #62bd31;
+$error-color: #be2424;
+$warning-color: #ffc82c;
+
+
+$gray-scales: (
+  ultra-light: #f7f7f7,
+  light: #d6d6d6,
+  medium: #989898,
+  normal: #707070,
+  dark: #333,
+  ultra-dark: #191919
+);
+
+
+$theme-colors: (
+  primary: $primary-color,
+  primary-light: $primary-color-light,
+  primary-dark: $primary-color-dark,
+  secondary: $secondary-color,
+  success: $success-color,
+  warning: $warning-color,
+  error: $error-color
+);

@@ -1,0 +1,94 @@
+@mixin margin-y($value) {
+  margin-bottom: $value;
+  margin-top: $value;
+}
+
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-bottom: $value;
+  padding-top: $value;
+}
+
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin flex-center($important: false) {
+  @if $important {
+    align-items: center !important;
+    display: flex !important;
+  } @else {
+    align-items: center;
+    display: flex;
+  }
+ 
+}
+
+@mixin font-size-line-height($font-size, $line-height) {
+  font-size: px-to-rem($font-size);
+  line-height: ($line-height / $font-size);
+}
+
+@mixin width-height($size) {
+  height: px-to-rem($size);
+  width: px-to-rem($size);
+} 
+// Convert pixels to rem.
+@function px-to-rem($value: 16, $base: 16) {
+  @return ($value / $base) * 1rem;
+}
+// Convert pixels to em.
+@function px-to-em($value: 16, $base: 16) {
+  @return ($value / $base) * 1em;
+}
+// Convert Adobe XD values to em (usually for letter-spacing).
+@function xd-to-em($spacing) {
+  @return ($spacing / 1000) * 1em;
+}
+
+@mixin fit-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+@mixin button-flat {
+  border: solid 1px map-get($theme-colors, 'primary');
+  border-radius: 7px;
+  color: map-get($theme-colors, 'primary');
+  padding: 5px;
+}
+
+// Set image as background cover.
+@mixin cover($url, $position: center center) {
+  background-image: url($url);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin col-width($width) {
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
+@mixin title {
+  @include font-size-line-height(25, 30);
+  color: map-get($theme-colors, 'primary');
+}
+
+@mixin subtitle {
+  @include font-size-line-height(17, 20);
+  color: map-get($theme-colors, 'primary');
+}
+
+@mixin bg-and-text-color($bgColor, $textColor) {
+  background-color: $primary-color-light;
+  border: solid 1px $primary-color;
+  color: $gray-dark;
+}

@@ -1,0 +1,43 @@
+$mobile-small: 320px;
+$mobile: 540px;
+$tablet: 768px;
+$tablet-large: 1024px;
+$desktop: 1280px;
+$desktop-large: 1440px;
+$desktop-extra-large: 2560px;
+
+$mobile-up: 541px;
+$tablet-up: 769px;
+$tablet-large-up: 1025px;
+$desktop-up: 1281px;
+$desktop-large-up: 1441px;
+$desktop-extra-large-up: 2561px;
+
+// Mobile First 
+$mobile-and-up: 'only screen and (min-width : #{$mobile-up})';
+$tablet-and-up: 'only screen and (min-width : #{$tablet-up})';
+$tablet-large-and-up: 'only screen and (min-width : #{$tablet-large-up})';
+$desktop-and-up: 'only screen and (min-width : #{$desktop-up})';
+$desktop-large-and-up: 'only screen and (min-width : #{$desktop-large-up})';
+$desktop-extra-large-and-up: 'only screen and (min-width : #{$desktop-extra-large-up})';
+
+// Desktop First
+$mobile-small-and-down: 'only screen and (max-width : #{$mobile-small})';
+$mobile-and-down: 'only screen and (max-width : #{$mobile})';
+$tablet-and-down: 'only screen and (max-width : #{$tablet})';
+$tablet-large-and-down: 'only screen and (max-width : #{$tablet-large})';
+$desktop-and-down: 'only screen and (max-width : #{$desktop})';
+$desktop-large-and-down: 'only screen and (max-width : #{$desktop-large})';
+$desktop-extra-large-and-down: 'only screen and (max-width : #{$desktop-extra-large})';
+
+
+$font-default: 'Varela Round', 'Montserrat', sans-serif;
+
+$theme-breakpoints: (
+  mobile: #{$mobile},
+  tablet: #{$tablet},
+  tablet-xl: #{$tablet-large},
+  desktop: #{$desktop},
+  desktop-xl: #{$desktop-large},
+  desktop-xxl: #{$desktop-extra-large}
+);

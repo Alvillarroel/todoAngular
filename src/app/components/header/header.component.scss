@@ -1,0 +1,68 @@
+@import '../../styles/index';
+
+.menu {
+  @include flex-center;
+  justify-content: space-between;
+  padding: 16px 0;
+
+  &-logo {
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  &-toogle {
+    @include flex-center;
+
+    small {
+      margin-left: 12px;
+    }
+
+    &__switch {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+
+    label {
+      background: grey;
+      border-radius: 100px;
+      cursor: pointer;
+      display: block;
+      height: 24px;
+      position: relative;
+      width: 48px;
+
+      &:after {
+        background: #fff;
+        border-radius: 90px;
+        content: '';
+        height: 20px;
+        left: 4px;
+        position: absolute;
+        top: 2px;
+        transition: 0.3s;
+        width: 20px;
+      }
+    }
+
+    input:checked + label {
+      background: map-get($theme-colors, 'success');
+    }
+    
+    input:checked + label:after {
+      left: calc(100% - 4px);
+      transform: translateX(-100%);
+    }
+    
+    label:active:after {
+      width: 28px;
+    }
+  }
+}
+
+
+
+
+
+

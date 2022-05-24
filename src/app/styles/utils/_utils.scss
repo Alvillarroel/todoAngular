@@ -1,0 +1,163 @@
+/**
+Withds & Height
+**/
+$count: 1;
+
+.w-auto {
+  width: auto !important;
+}
+
+.h-auto {
+  height: auto !important;
+}
+@while $count <= 10 {
+  .w-#{$count}0 {
+    width: (10 * $count)+0%;
+  }
+  .h-#{$count}0 {
+    height: (10 * $count)+0%;
+  }
+  $count: $count + 1;
+}
+
+/**
+Displays
+**/
+$displays: 'flex', 'block', 'inline', 'inline-block', 'inline-flex', 'grid';
+@each $display in $displays {
+  .d-#{$display} {
+    display: #{$display};
+  } 
+}
+
+/**
+  Aligns
+**/
+$aligns: 'center', 'start', 'end';
+@each $align in $aligns {
+  .align-#{$align} {
+    align-items: #{$align};
+  }
+}
+
+/**
+  Justifies
+**/
+$justifies: 'around', 'evenly', 'between', 'start', 'end', 'center';
+@each $justify in $justifies {
+  .justify-#{$justify} {
+    @if $justify == start {
+      justify-content: flex-start;
+    } @else if $justify == end {
+      justify-content: flex-end;
+    } @else if $justify == center {
+      justify-content: center;
+    } @else {
+      justify-content: space-#{$justify};
+    }
+  }
+}
+
+
+/**
+ * Flex Directions
+ **/
+$flexDirections: 'row', 'column', 'row-reverse', 'column-reverse';
+@each $flexDirection in $flexDirections {
+  .flex-#{$flexDirection} {
+    flex-direction: #{$flexDirection};
+  }
+}
+
+/**
+Margins && Paddings
+**/
+$mapClasses: ('m': margin, 'mt': margin-top, 'mb': margin-bottom, 'ml': margin-left, 'mr': margin-right, 
+'p': padding, 'pt': padding-top, 'pb': padding-bottom, 'pl': padding-left, 'pr': padding-right);
+$count: 0;
+@while $count <= 6 {
+  @each $class, $property in $mapClasses {
+    .#{$class}-#{$count} {
+      #{$property}: $count * 0.5rem;
+    }
+  }
+  .mx-#{$count} {
+    margin-left: $count * 0.5rem;
+    margin-right: $count * 0.5rem;
+  }
+  .my-#{$count} {
+    margin-bottom: $count * 0.5rem;
+    margin-top: $count * 0.5rem;
+  }
+  .px-#{$count} {
+    padding-left: $count * 0.5rem;
+    padding-right: $count * 0.5rem;
+  }
+  .py-#{$count} {
+    padding-bottom: $count * 0.5rem;
+    padding-top: $count * 0.5rem;
+  }
+  $count: $count + 1;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+/**
+Positions
+**/
+$positions: 'relative', 'absolute', 'fixed';
+@each $position in $positions {
+  .#{$position} {
+    position: #{$position};
+  }
+}
+
+/**
+Borders 
+**/
+.border {
+  border: solid 1px #ccc;
+
+  &-none {
+    border: none;
+  }
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+
+/**
+Titles 
+**/
+.title {
+  @include title;
+}
+
+.subtitle {
+  @include subtitle;
+}
+
+
+/**
+  text
+**/
+$texts: 'uppercase', 'capitalize', 'lowercase', 'inherit';
+@each $text in $texts {
+  .text-#{$text} {
+    text-transform: #{$text};
+  }
+}
+
+/**
+  Fonts 
+**/
+$fonts: 'normal', 'lighter', '500', 'bold';
+@each $font in $fonts {
+  .font-#{$font} {
+    font-weight: #{$font};
+  }
+}
